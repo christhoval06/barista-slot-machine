@@ -1,0 +1,32 @@
+{
+  "name": "slot-machine",
+  "version": "1.0.0",
+  "description": "React Slot Machine, winners get a hot beverage.",
+  "main": "server.js",
+  "dependencies": {
+    "handlebars": "^4.0.4",
+    "hapi": "^11.0.3",
+    "hoek": "^3.0.0",
+    "inert": "^3.2.0",
+    "vision": "^3.0.0"
+  },
+  "devDependencies": {
+    "duo": "^0.15.3",
+    "duo-babel": "^6.0.0"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules && rm -rf components && rm -f dist/app.js",
+    "build": "node build.js",
+    "serve": "node server.js",
+    "app": "npm run build && npm run serve"
+  },
+  "keywords": [
+    "slot",
+    "machine",
+    "react",
+    "animation",
+    "skeleton"
+  ],
+  "author": "Josiah Ruddell",
+  "license": "ISC"
+}
