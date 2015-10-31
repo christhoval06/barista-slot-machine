@@ -1,4 +1,3 @@
-var Path = require('path');
 var Hapi = require('hapi');
 var Hoek = require('hoek');
 
@@ -25,6 +24,7 @@ server.register(require('inert'), function (err) {
         path: '/css/{param*}',
         handler: { directory: { path: 'dist' } }
     });
+
     server.route({
         method: 'GET',
         path: '/js/{param*}',
@@ -41,7 +41,8 @@ server.register(require('inert'), function (err) {
     });
 
     // Start the server
-    server.start(function () {
+    server.start(function (err) {
+        Hoek.assert(!err, err);
         console.log('Server running at:', server.info.uri);
     });
 });

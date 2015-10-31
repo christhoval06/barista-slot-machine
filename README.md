@@ -1,11 +1,11 @@
 ## Barista Slot Machine
 
-The application uses reactjs for views updates, and no other javascript libraries. Animations are CSS.
+The application uses ES6 and ReactJS for views updates. Animations are CSS.
 
 For a basic overview, a "reel" is seeded with a few options and from there extended out to a configurable number of items per reel. The reel distribution is randomized from the initial seed. Spinning the reel adds additional reels to the end of the visible reel for the effect, then cleans up the excess after the animation completes.
 
 Debug view can be toggled on/off.
-### install
+### Install (node v4, npm  v2)
 1.  `sudo npm install`
 2.  `sudo npm run build` (skip this step if build is included)
 3.  `npm run serve`

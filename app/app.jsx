@@ -2,16 +2,6 @@ import React from './../lib/react/react.js';
 import ReactDOM from './../lib/react/react-dom.js';
 import { Reel } from './reel.jsx';
 
-
-var oldRequire = window.require;
-window.require = function(name){
-    debugger;
-    if (name === 'react'){
-        name = './../lib/react/react.js';
-    }
-    return oldRequire(name);
-};
-
 class ReelItem {
     constructor(type, name) {
         this.type = type;
@@ -40,17 +30,17 @@ export class App extends React.Component {
     spinAll(e){
         // ignore requests to play before the reels are done spinning
         if(this.reels.some(r => r.spinning)){
-            e.preventDefault()
+            e.preventDefault();
             return;
         }
-        this.setState({ message: 'Reeeeeeling...'})
+        this.setState({ message: 'Reeeeeeling...'});
         // `spin` returns the type result of the spin
         // if all the reels produced the same type
         // then we have a winner
         var types = this.reels.map(this.spin);
 
         // e.g. types[0] === types[1] && types[0] === types[2]
-        var winner = new Set(types).size === 1
+        var winner = new Set(types).size === 1;
 
         if(winner){
             this.reels.forEach(r => r.setWinner());
@@ -68,7 +58,7 @@ export class App extends React.Component {
         // random number 0...19
         var n = Math.floor(Math.random() * reel.props.numItems);
         reel.spin(n);
-        return reel.currentType
+        return reel.currentType;
     }
 
     render() {
